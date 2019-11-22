@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { userActions } from '../Redux/Actions/userActions';
 
 
 class Login extends Component {
-    
+
         state = {
             username: '',
             password: ''
@@ -41,4 +43,8 @@ class Login extends Component {
 
 }
 
-export default Login;
+const mapDispatchToProps = {
+    loginUserToAPI: userActions.loginUserToAPI
+}
+
+export default connect(null, mapDispatchToProps)(Login);
