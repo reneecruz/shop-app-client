@@ -1,29 +1,19 @@
 import React, { Component } from 'react';
 import Card from '../Components/Card';
+import { connect } from 'react-redux';
 
 
 class Home extends Component {
 
-    state = {
-        items: []
-    }
-
-    componentDidMount() {
-        fetch("http://localhost:3000/items")
-        .then(res => res.json())
-        .then(items => this.setState({
-            items: items
-        }))
-    }
-
     renderCards = () => {
-        const { items } = this.state;
+        const { items } = this.props;
         if (items.length) {
             return items.map(item => <Card key={item.id} item={item}/>)
         }
     }
 
     render() { 
+        console.log(this.props)
         return (
             <div className="card-container">{this.renderCards()}</div>
         )
@@ -32,4 +22,12 @@ class Home extends Component {
 
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+        items: state.itemsReducer
+    }
+    
+}
+
+
+export default connect(mapStateToProps)(Home);

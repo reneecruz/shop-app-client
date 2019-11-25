@@ -23,6 +23,8 @@ class Login extends Component {
               <>
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
+
+                  <label>username</label>
                   <input
                     type="text"
                     name="username"
@@ -30,6 +32,9 @@ class Login extends Component {
                     value={username}
                     onChange={this.handleChange}
                   />
+                  <br/>
+
+                  <label>password</label>
                   <input
                     type="text"
                     name="password"
@@ -37,6 +42,8 @@ class Login extends Component {
                     value={password}
                     onChange={this.handleChange}
                   />
+                  <br/>
+                  
                   <input type="submit" />
                 </form>
               </>

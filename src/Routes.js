@@ -10,9 +10,10 @@ export const Routes = () => {
         <Route path="/signup" component={Pages.Signup} />
 
         <Route
-          path="/characters/:id"
-          render={() => <Pages.ShowPage name="hellooooo" />}
+          path="/items/:id"
+          render={(routerProps) => <Pages.ShowPage {...routerProps} />}
         />
+        <Route path="/account" component={Pages.Account} />
 
     </Switch>
 

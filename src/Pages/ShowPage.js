@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-export default class ShowPage extends Component {
-  state = {
-    item: {}
-  };
+class ShowPage extends Component {
 
-  componentDidMount() {
-    const { params } = this.props.match;
-    fetch('http://localhost:3000/items' + params.id)
-      .then(r => r.json())
-      .then(data => {
-        console.log(data);
-        // debugger;
-      });
+  item = () => {
+      const { params } = this.props.match;
+      if(this.props.items.length) {
+       return this.props.items.find(item => item.id == params.id)
+      }
+      return null
   }
 
   render() {
-    const { item } = this.state;
-    return <div>{item.name}</div>;
+    console.log(this.item())
+    if(this.item() !== null) {
+    return <div className="show-item-container">
+    <img src={this.item().img_url} alt={this.item().name} />
+    <h1>{this.item().name}</h1>
+    <h2>${this.item().price}</h2>
+    <h3>{this.item().description}</h3>
+    </div>;
+    }
+    return null
   }
 }
+
+const mapStateToProps = state => ({ items: state.itemsReducer})
+
+export default connect(mapStateToProps)(ShowPage);
+
