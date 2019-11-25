@@ -22,3 +22,7 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+.card img {
+  width: 20%;
+}

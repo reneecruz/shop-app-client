@@ -26,12 +26,14 @@ class Login extends Component {
                   <input
                     type="text"
                     name="username"
+                    placeholder="username"
                     value={username}
                     onChange={this.handleChange}
                   />
                   <input
                     type="text"
                     name="password"
+                    placeholder="password"
                     value={password}
                     onChange={this.handleChange}
                   />

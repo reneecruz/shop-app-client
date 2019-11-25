@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 export default class ShowPage extends Component {
   state = {
@@ -7,7 +8,7 @@ export default class ShowPage extends Component {
 
   componentDidMount() {
     const { params } = this.props.match;
-    fetch('https://localhost:3000/items' + params.id)
+    fetch('http://localhost:3000/items' + params.id)
       .then(r => r.json())
       .then(data => {
         console.log(data);
@@ -17,6 +18,6 @@ export default class ShowPage extends Component {
 
   render() {
     const { item } = this.state;
-    return <div></div>;
+    return <div>{item.name}</div>;
   }
 }
