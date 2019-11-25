@@ -1,7 +1,15 @@
+// Redux User Actions
+
 const setUserAction = userObj => ({
     type: 'SET_USER',
     payload: userObj
 });
+
+const clearUserAction = () => ({
+    type: 'CLEAR_USER'
+});
+
+// Fetch
 
 const loginUserToAPI = userCredentials => dispatch => {
     fetch('http://localhost:3000/login', {
@@ -49,11 +57,16 @@ const createNewUserToAPI = userInfo => dispatch => {
       });
   };
   
+const logoutUser = () => dispatch => {
+    dispatch(clearUserAction());
+    localStorage.clear();
+}
 
 export default {
     loginUserToAPI,
     persistUserFromAPI,
-    createNewUserToAPI
+    createNewUserToAPI,
+    logoutUser
 };
 
 

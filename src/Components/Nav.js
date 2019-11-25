@@ -1,9 +1,23 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import userActions from '../Redux/Actions/userActions';
 
-export const Nav = () => {
+const Nav = () => {
+
+    const dispatch = useDispatch();
+    const handleLogout = () =>{
+        dispatch(userActions.logoutUser());
+    };
+
     return (
-        <div>
-            
-        </div>
+        <nav id="nav" style={{ display: 'flex', justifyContent: 'space-evenly', position: 'sticky' }}>
+            <Link to="/">Home</Link>
+            <Link to="/signup">Signup</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/" onClick={handleLogout}>Logout</Link>   
+        </nav>
     )
 }
+
+export default Nav;
