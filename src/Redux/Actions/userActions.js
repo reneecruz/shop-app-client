@@ -18,6 +18,21 @@ const loginUserToAPI = userCredentials => dispatch => {
      });
 };
 
+const persistUserFromAPI = () => dispatch => {
+    fetch('http://localhost:3000/persist', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'bearer ' + localStorage.token
+      }
+    })
+      .then(r => r.json())
+      .then(userObj => {
+        console.log(userObj)
+        dispatch(setUserAction(userObj));
+      });
+  };
+
 const createNewUserToAPI = userInfo => dispatch => {
     const config = {
       method: 'POST',
@@ -37,6 +52,7 @@ const createNewUserToAPI = userInfo => dispatch => {
 
 export default {
     loginUserToAPI,
+    persistUserFromAPI,
     createNewUserToAPI
 };
 

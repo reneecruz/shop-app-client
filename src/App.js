@@ -11,6 +11,12 @@ import Nav from './Components/Nav';
 
 class App extends React.Component {
 
+  componentDidMount() {
+    if (localStorage.token) {
+      this.props.persistUserFromAPI();
+    }
+  }
+
   
   render(){
     return (
