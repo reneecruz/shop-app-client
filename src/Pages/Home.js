@@ -11,21 +11,21 @@ class Home extends Component {
     componentDidMount() {
         fetch("http://localhost:3000/items")
         .then(res => res.json())
-        .then(data => this.setState({
-            items: data
+        .then(items => this.setState({
+            items: items
         }))
     }
 
     renderCards = () => {
         const { items } = this.state;
         if (items.length) {
-            return items.map(item => <Card key={item.id} data={item}/>)
+            return items.map(item => <Card key={item.id} item={item}/>)
         }
     }
 
     render() { 
         return (
-            <div classname="card-container">{this.renderCards()}</div>
+            <div className="card-container">{this.renderCards()}</div>
         )
             
     }

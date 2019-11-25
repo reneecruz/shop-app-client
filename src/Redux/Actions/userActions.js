@@ -18,8 +18,26 @@ const loginUserToAPI = userCredentials => dispatch => {
      });
 };
 
+const createNewUserToAPI = userInfo => dispatch => {
+    const config = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
+    };
+    fetch('http://localhost:3000/users', config)
+      .then(r => r.json())
+      .then(data => {
+        dispatch(setUserAction(data.user));
+        localStorage.token = data.token;
+      });
+  };
+  
+
 export default {
-    loginUserToAPI
+    loginUserToAPI,
+    createNewUserToAPI
 };
 
 

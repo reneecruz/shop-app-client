@@ -9,6 +9,11 @@ export const Routes = () => {
         <Route path="/login" component={Pages.Login} />
         <Route path="/signup" component={Pages.Signup} />
 
+        <Route
+          path="/characters/:id"
+          render={() => <Pages.ShowPage name="hellooooo" />}
+        />
+
     </Switch>
 
     )
