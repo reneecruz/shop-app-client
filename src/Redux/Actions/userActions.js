@@ -31,7 +31,7 @@ const persistUserFromAPI = () => dispatch => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'bearer ' + localStorage.token
+        Authorization: localStorage.token
       }
     })
       .then(r => r.json())

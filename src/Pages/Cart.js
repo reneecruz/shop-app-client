@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const Cart = () => {
     const [item, setItem] = useState("")
-    console.log("shopping cart page")
+    console.log("shopping cart page", window.history)
     const user = useSelector(state => state.currentUser)
         console.log("shopping cart")
         return (

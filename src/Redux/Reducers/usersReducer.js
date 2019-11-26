@@ -1,4 +1,10 @@
-export default (state = {}, { type, payload }) => {
+let defaultState = {
+    active_order: {
+        order_items: []
+    }
+}
+
+export default (state = defaultState, { type, payload }) => {
     switch (type) {
         case 'SET_USER':    
             return payload;
