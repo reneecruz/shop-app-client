@@ -6,7 +6,7 @@ const Account = () => {
         console.log("account page")
     const user = useSelector(state => state.currentUser)
 
-    console.log("account!")
+    console.log("account!", user.active_order)
     return (
         <div>
             Item: {item}

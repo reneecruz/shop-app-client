@@ -9,6 +9,11 @@ const clearUserAction = () => ({
     type: 'CLEAR_USER'
 });
 
+const addToCartAction = (order_item) => ({
+    type: 'ADD_TO_CART',
+    payload: order_item
+});
+
 // Fetch
 
 const loginUserToAPI = userCredentials => dispatch => {
@@ -62,11 +67,29 @@ const logoutUser = () => dispatch => {
     localStorage.clear();
 }
 
+const createOrderItem = (item_id, active_order_id) => dispatch => {
+    const config = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            item_id: item_id, 
+            order_id: active_order_id})
+    };
+    fetch('http://localhost:3000/order_items', config)
+    .then(res => res.json())
+    .then(data => {
+        dispatch(addToCartAction(data))
+    });   
+}
+
 export default {
     loginUserToAPI,
     persistUserFromAPI,
     createNewUserToAPI,
-    logoutUser
+    logoutUser, 
+    createOrderItem
 };
 
 

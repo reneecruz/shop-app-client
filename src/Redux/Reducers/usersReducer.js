@@ -10,6 +10,13 @@ export default (state = defaultState, { type, payload }) => {
             return payload;
         case 'CLEAR_USER':
             return {};
+        case 'ADD_TO_CART':
+            return {...state, 
+                active_order: {
+                    ...state.active_order, 
+                    order_items: [...state.active_order.order_items, payload]
+                }
+            };  
         default: 
         return state;
     }

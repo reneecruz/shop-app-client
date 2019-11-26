@@ -14,7 +14,7 @@ class ShowPage extends Component {
   }
 
   render() {
-    console.log(this.item())
+    console.log("showpage", this.item(), localStorage.token)
     if(this.item() !== null) {
     return <div className="show-item-container">
     <img src={this.item().img_url} alt={this.item().name} />
