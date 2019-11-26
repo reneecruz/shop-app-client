@@ -14,6 +14,7 @@ export const Routes = () => {
           render={(routerProps) => <Pages.ShowPage {...routerProps} />}
         />
         <Route path="/account" component={Pages.Account} />
+        <Route path="/cart" component={Pages.Cart} />
 
     </Switch>
 

@@ -17,6 +17,7 @@ const Nav = () => {
             <Link to="/login">Login</Link>
             <Link to="/" onClick={handleLogout}>Logout</Link>  
             <Link to="/account">My Account</Link>
+            <Link to="/cart">Cart</Link>
         </nav>
     )
 }

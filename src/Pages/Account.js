@@ -5,6 +5,8 @@ const Account = () => {
     const [item, setItem] = useState("")
         console.log("account page")
     const user = useSelector(state => state.currentUser)
+
+    console.log("account!")
     return (
         <div>
             Item: {item}

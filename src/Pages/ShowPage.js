@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class ShowPage extends Component {
@@ -19,6 +21,8 @@ class ShowPage extends Component {
     <h1>{this.item().name}</h1>
     <h2>${this.item().price}</h2>
     <h3>{this.item().description}</h3>
+    <Link to="/cart" className= "show-button">Add to Cart</Link>
+    <Link to="/" className="show-button">Continue Shopping</Link>
     </div>;
     }
     return null

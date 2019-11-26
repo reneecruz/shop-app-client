@@ -58,3 +58,17 @@ code {
 .show-item-container img {
   width: 100%;
 }
+
+.show-button {
+  border: 1px solid #262626;
+  margin: 3vw;
+  padding: 1vw;
+  text-decoration: none;
+  color: #eeeeee;
+  background-color: #262626;
+  transition: 0.8s;
+  /* &:hover {
+    color: #262626;
+    background-color: #eee;
+  } */
+}
