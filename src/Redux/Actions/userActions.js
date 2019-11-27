@@ -71,7 +71,8 @@ const createOrderItem = (item_id, active_order_id) => dispatch => {
     const config = {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         body: JSON.stringify({
             item_id: item_id, 
