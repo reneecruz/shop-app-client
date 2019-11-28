@@ -11,7 +11,7 @@ export const Routes = () => {
 
         <Route
           path="/items/:id"
-          render={(routerProps) => <Pages.ShowPage {...routerProps} />}
+          render={(routerProps) => <Pages.ShowItem {...routerProps} />}
         />
         <Route path="/account" component={Pages.Account} />
         <Route path="/cart" component={Pages.Cart} />

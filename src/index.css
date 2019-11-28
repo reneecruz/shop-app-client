@@ -72,3 +72,12 @@ code {
     background-color: #eee;
   } */
 }
+
+.cart-item img {
+  max-height: 15%;
+  max-width: 15%;
+}
+
+.cart-item {
+  text-align: right justify;
+}

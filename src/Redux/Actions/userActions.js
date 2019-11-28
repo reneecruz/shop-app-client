@@ -81,6 +81,7 @@ const createOrderItem = (item_id, active_order_id) => dispatch => {
     fetch('http://localhost:3000/order_items', config)
     .then(res => res.json())
     .then(data => {
+      // debugger 
         dispatch(addToCartAction(data))
     });   
 }
