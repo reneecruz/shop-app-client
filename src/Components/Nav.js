@@ -26,7 +26,7 @@ const Nav = () => {
             <Link to="/">Home</Link>
             <Link to="/account">My Account</Link>
             <Link to="/" onClick={handleLogout}>Logout</Link>     
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart ({currentUser.active_order.order_items.length})</Link>
             </>
         )
     }
