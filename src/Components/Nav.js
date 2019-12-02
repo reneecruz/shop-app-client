@@ -33,7 +33,9 @@ const Nav = () => {
 
     return (
         <nav id="nav" style={{ display: 'flex', justifyContent: 'space-evenly', position: 'sticky' }}>
-          
+           
+               <p>SHOPIFFY</p>
+        
           { currentUser.id ? userRoutes() : guestRoutes() }
 
         </nav>

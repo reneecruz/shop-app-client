@@ -15,7 +15,9 @@ class Home extends Component {
     render() { 
         console.log(this.props)
         return (
-            <div className="card-container">{this.renderCards()}</div>
+            <div className="card-container">
+                {this.renderCards()}
+            </div>
         )
             
     }
