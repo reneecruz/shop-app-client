@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import userActions from '../Redux/Actions/userActions';
 
-const Cart = () => {
+const Cart = (props) => {
     const [item, setItem] = useState("")
-    console.log("shopping cart page", window.history, item)
     const user = useSelector(state => state.currentUser)
-console.log(user.active_order.order_items[0])
-const renderCart = () => {
+    const dispatch = useDispatch()
+    // console.log(user.active_order.order_items[0])
+    
+    const renderCart = () => {
+        console.log(user.active_order)
     return user.active_order.order_items.map(order_item => {
     return (
         <div className="cart-item">
@@ -21,7 +24,12 @@ const renderCart = () => {
         )   
     })
     }
-      
+
+    const checkOut = () => {
+        console.log(props.submitOrder)
+        dispatch(userActions.submitOrder(user.active_order))
+    }
+
         return (
             <div>
                 <h1>{user.first_name}'s Shopping Cart</h1>
@@ -29,6 +37,7 @@ const renderCart = () => {
                 <ul>
                     {renderCart()}
                 </ul>
+                <button onClick={checkOut}>Checkout</button>
             </div>
         )
 }

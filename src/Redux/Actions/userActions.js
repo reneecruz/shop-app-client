@@ -14,6 +14,14 @@ const addToCartAction = (order_item) => ({
     payload: order_item
 });
 
+const submitOrderAction = () => ({
+    type: 'SUBMIT_ORDER',
+    // payload: active_order  
+})
+
+
+
+
 // Fetch
 
 const loginUserToAPI = userCredentials => dispatch => {
@@ -26,6 +34,7 @@ const loginUserToAPI = userCredentials => dispatch => {
     })
     .then(res => res.json())
     .then(data => {
+ 
         dispatch(setUserAction(data.user));
         localStorage.token = data.token;
      });
@@ -86,12 +95,31 @@ const createOrderItem = (item_id, active_order_id) => dispatch => {
     });   
 }
 
+const submitOrder = () => dispatch => {
+
+  const config = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.token
+    }
+  };
+    fetch('http://localhost:3000/checkout', config)
+    .then(res => res.json())
+    .then(data => {
+      // dispatch(submitOrderAction(data))
+    });
+}
+
+
+
 export default {
     loginUserToAPI,
     persistUserFromAPI,
     createNewUserToAPI,
     logoutUser, 
-    createOrderItem
+    createOrderItem,
+    submitOrder
 };
 
 

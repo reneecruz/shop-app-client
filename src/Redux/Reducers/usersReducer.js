@@ -7,7 +7,7 @@ let defaultState = {
 export default (state = defaultState, { type, payload }) => {
     switch (type) {
         case 'SET_USER':    
-            return payload;
+            return {...state, ...payload};
         case 'CLEAR_USER':
             return {};
         case 'ADD_TO_CART':
@@ -16,7 +16,9 @@ export default (state = defaultState, { type, payload }) => {
                     ...state.active_order, 
                     order_items: [...state.active_order.order_items, payload]
                 }
-            };  
+            };
+        case 'SUBMIT_ORDER': 
+            return payload;
         default: 
         return state;
     }

@@ -6,7 +6,7 @@ import userActions from '../Redux/Actions/userActions';
 const Nav = () => {
     const currentUser = useSelector(state => state.currentUser)
     const dispatch = useDispatch();
-    const handleLogout = () =>{
+    const handleLogout = () => {
         dispatch(userActions.logoutUser());
     };
 
