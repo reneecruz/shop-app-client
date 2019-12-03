@@ -14,9 +14,9 @@ const addToCartAction = (order_item) => ({
     payload: order_item
 });
 
-const submitOrderAction = () => ({
+const submitOrderAction = (active_order) => ({
     type: 'SUBMIT_ORDER',
-    // payload: active_order  
+    payload: active_order  
 })
 
 
@@ -95,7 +95,7 @@ const createOrderItem = (item_id, active_order_id) => dispatch => {
     });   
 }
 
-const submitOrder = () => dispatch => {
+const submitOrder = (active_order) => dispatch => {
 
   const config = {
     method: 'GET',
@@ -107,7 +107,8 @@ const submitOrder = () => dispatch => {
     fetch('http://localhost:3000/checkout', config)
     .then(res => res.json())
     .then(data => {
-      // dispatch(submitOrderAction(data))
+      console.log(data)
+      dispatch(submitOrderAction(data))
     });
 }
 

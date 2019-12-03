@@ -33,7 +33,7 @@ const Cart = (props) => {
         return (
             <div>
                 <h1>{user.first_name}'s Shopping Cart</h1>
-                <h2>You've got {user.active_order.order_items.length} items in your cart.</h2>
+                <h2>You've got {user.active_order ? user.active_order.order_items.length : null} items in your cart.</h2>
                 <ul>
                     {renderCart()}
                 </ul>

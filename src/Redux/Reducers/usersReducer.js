@@ -18,7 +18,7 @@ export default (state = defaultState, { type, payload }) => {
                 }
             };
         case 'SUBMIT_ORDER': 
-            return payload;
+            return {...state, ...payload};
         default: 
         return state;
     }

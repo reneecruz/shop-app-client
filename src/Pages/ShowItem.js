@@ -10,11 +10,12 @@ import { connect } from 'react-redux';
 class ShowItem extends Component {
 
     handleOnClick = () => {
-        
+        if (this.props.currentUser.active_order){
         const active_order_id = this.props.currentUser.active_order.id
         const item_id = this.props.match.params.id
 
-        this.props.createOrderItem(item_id, active_order_id)
+        return this.props.createOrderItem(item_id, active_order_id)} 
+        else {return null }
        
 
         // console.log("been clicked!", this.props)
