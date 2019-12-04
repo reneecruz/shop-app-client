@@ -18,7 +18,7 @@ const Account = (props) => {
                arr = order.order_items.map(item => {
                 // debugger
                 return (
-                    <div className="cart-item" >
+                    <div className="cart-item" key={item.id}>
                     <h3>Order Date: {item.updated_at}</h3>
                     
                     <Link to={`/items/${item.id}`} >

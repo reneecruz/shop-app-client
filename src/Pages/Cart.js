@@ -51,12 +51,12 @@ const Cart = (props) => {
                 {user.active_order.order_items.length === 0 
                 ? 
                 
-                <h2>Your cart is currently empty, {user.first_name} 💀</h2>
+                <h2>Your cart is currently empty, {user.first_name} </h2>
                 
                 : 
                 <div>
                 
-                <h2>You've got {user.active_order.order_items.length} items in your cart, {user.first_name}! 😉
+                <h2>You've got {user.active_order.order_items.length} items in your cart, {user.first_name}! 
                 </h2>
                 <ul>
                     {renderCart()}
