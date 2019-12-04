@@ -26,13 +26,14 @@ class Signup extends Component {
       first_name: '',
       last_name: ''
     })
+    this.props.history.push('/account')
     };
 
         render() {
             const { username, password, email, img_url, first_name, last_name } = this.state;
             return (
               <>
-                
+                <div className="content">
                 <form onSubmit={this.handleSubmit}>
                 <h1>Signup for an Account</h1>
 
@@ -99,6 +100,7 @@ class Signup extends Component {
 
                   <input type="submit" />
                 </form>
+                </div>
               </>
             );
           }

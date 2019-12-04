@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  flex: 1 0 auto;
+  
 }
 
 .App-logo {
@@ -51,4 +53,11 @@
 #nav p {
   color: #f2f2f2;
   font-weight: bold;
+}
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: hotpink;
+  padding: 20px;
 }

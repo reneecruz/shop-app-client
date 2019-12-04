@@ -14,7 +14,7 @@ const Cart = (props) => {
         // console.log(user.active_order)
     return user.active_order.order_items.map(order_item => {
     return (
-        <div className="cart-item" >
+        <div className="cart-item" key={order_item.item.id}>
         <Link to={`/items/${order_item.item.id}`} >
         <img src={order_item.item.img_url} />
         </Link>
@@ -47,7 +47,8 @@ const Cart = (props) => {
         return (
             
             <>
-            <h1>{user.first_name}'s Shopping Cart 🛒</h1>
+            <div className="content">
+            <h1>{user.first_name}'s Shopping Cart</h1>
                 {user.active_order.order_items.length === 0 
                 ? 
                 
@@ -65,6 +66,7 @@ const Cart = (props) => {
                 </div>
                 }
                 <Link to="/" className="show-button">Continue Shopping</Link>
+                </div>
             </>
         )
 }

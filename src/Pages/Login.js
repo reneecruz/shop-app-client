@@ -19,12 +19,14 @@ class Login extends Component {
               username: '',
               password: ''
             })
+            this.props.history.push('/account')
           };
         
           render() {
             const { username, password } = this.state;
             return (
               <>
+              <div className="content">
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
 
@@ -50,6 +52,7 @@ class Login extends Component {
                   
                   <input type="submit" />
                 </form>
+                </div> 
               </>
             );
           }

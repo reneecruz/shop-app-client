@@ -9,6 +9,7 @@ import userActions from './Redux/Actions/userActions';
 import itemActions from './Redux/Actions/itemActions';
 import Nav from './Components/Nav';
 import { fetchItemsFromAPI } from './Redux/Actions/itemActions'
+import Footer from './Components/Footer';
 
 
 class App extends React.Component {
@@ -26,7 +27,7 @@ class App extends React.Component {
 
   
   render(){
-    console.log("APP JS", this.props)
+    // console.log("APP JS", this.props)
     return (
       <>
    
@@ -34,6 +35,7 @@ class App extends React.Component {
         <Nav />
         <Routes />
       </Router>
+      <Footer />
       </>
      );
   }
