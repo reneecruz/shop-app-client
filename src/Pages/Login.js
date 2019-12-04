@@ -36,7 +36,7 @@ class Login extends Component {
 
                   <label>password</label>
                   <input
-                    type="text"
+                    type="password"
                     name="password"
                     placeholder="password"
                     value={password}

@@ -17,6 +17,8 @@ export default (state = defaultState, { type, payload }) => {
                     order_items: [...state.active_order.order_items, payload]
                 }
             };
+        case 'REMOVE_FROM_CART':
+            return {};
         case 'SUBMIT_ORDER': 
             return {...state, ...payload};
         default: 

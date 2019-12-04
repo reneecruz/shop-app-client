@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import userActions from '../Redux/Actions/userActions';
+import SearchBar from './SearchBar';
 
 const Nav = () => {
     const currentUser = useSelector(state => state.currentUser)
@@ -33,13 +34,17 @@ const Nav = () => {
 
     
     return (
+        <>
         <nav id="nav" style={{ display: 'flex', justifyContent: 'space-evenly', position: 'sticky' }}>
            
                <p>SHOPIFFY</p>
-        
+               
+               
           { currentUser.id ? userRoutes() : guestRoutes() }
-
+          <SearchBar />
         </nav>
+       
+        </>
     )
 }
 

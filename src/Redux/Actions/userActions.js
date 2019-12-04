@@ -14,6 +14,10 @@ const addToCartAction = (order_item) => ({
     payload: order_item
 });
 
+const removeFromCartAction = (order_item) => ({
+  type: 'REMOVE_FROM_CART',
+})
+
 const submitOrderAction = (active_order) => ({
     type: 'SUBMIT_ORDER',
     payload: active_order  
@@ -95,6 +99,26 @@ const createOrderItem = (item_id, active_order_id) => dispatch => {
     });   
 }
 
+const removeOrderItem = (item) => dispatch => {
+  const config = {
+    method: 'DELETE', 
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': localStorage.token 
+    }, 
+    body: JSON.stringify({
+      order_item: item
+    })
+  };
+  fetch(`http://localhost:3000/order_items/${item.id}`, config)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+
+  });
+}
+
 const submitOrder = (active_order) => dispatch => {
 
   const config = {
@@ -120,6 +144,7 @@ export default {
     createNewUserToAPI,
     logoutUser, 
     createOrderItem,
+    removeOrderItem,
     submitOrder
 };
 
