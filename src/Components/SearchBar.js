@@ -22,7 +22,7 @@ const SearchBar = (props) => {
     //     return item.name.toLowerCase().indexOf(searchInput.toLowerCase()) !== -1
     // })
 
-    console.log("account!", user)
+
     return (   
         <div>
             <input type="text" value={searchInput} onChange={(e) => handleChange(e.target.value)}/>
