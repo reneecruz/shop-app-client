@@ -36,6 +36,7 @@ const Cart = (props) => {
         // debugger
         console.log(props.submitOrder)
         dispatch(userActions.submitOrder(user.active_order))
+        props.history.push('/checkout')
     }
 
     // const renderTotalPrice = () => {

@@ -14,7 +14,7 @@ const Account = (props) => {
         
         //    debugger
            user.submitted_orders.forEach(order => {
-              
+
                arr = order.order_items.map(item => {
                 // debugger
                 return (
@@ -29,6 +29,7 @@ const Account = (props) => {
                     </div>
                     ) 
             })
+        
           
         })
        }
@@ -53,6 +54,11 @@ const Account = (props) => {
            <Link to="/"className="show-button">Delete Profile </Link>
 
 {user.submitted_orders ? <h2>{user.first_name}'s Past Orders: </h2> : null }
+
+            {/* <>
+            <h3>You spent ${user.submitted_orders.ordertotal_price} on this order.</h3>
+            </>  */}
+           
             {renderSubmittedOrders()}
             
             
