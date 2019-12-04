@@ -1,35 +1,35 @@
 import React, { Component } from 'react';
 import Card from '../Components/Card';
+import { connect } from 'react-redux';
 
 
 class Home extends Component {
 
-    state = {
-        items: []
-    }
-
-    componentDidMount() {
-        fetch("http://localhost:3000/items")
-        .then(res => res.json())
-        .then(data => this.setState({
-            items: data
-        }))
-    }
-
     renderCards = () => {
-        const { items } = this.state;
+        const { items } = this.props;
         if (items.length) {
-            return items.map(item => <Card key={item.id} data={item}/>)
+            return items.map(item => <Card key={item.id} item={item}/>)
         }
     }
 
     render() { 
+        console.log(this.props)
         return (
-            <div classname="card-container">{this.renderCards()}</div>
+            <div className="card-container">
+                {this.renderCards()}
+            </div>
         )
             
     }
 
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+        items: state.itemsReducer
+    }
+    
+}
+
+
+export default connect(mapStateToProps)(Home);

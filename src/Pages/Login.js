@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { userActions } from '../Redux/Actions/userActions';
+import userActions from '../Redux/Actions/userActions';
 
 
 class Login extends Component {
@@ -15,6 +15,10 @@ class Login extends Component {
           handleSubmit = e => {
             e.preventDefault();
             this.props.loginUserToAPI(this.state);
+            this.setState({
+              username: '',
+              password: ''
+            })
           };
         
           render() {
@@ -23,18 +27,27 @@ class Login extends Component {
               <>
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
+
+                  <label>username</label>
                   <input
                     type="text"
                     name="username"
+                    placeholder="username"
                     value={username}
                     onChange={this.handleChange}
                   />
+                  <br/>
+
+                  <label>password</label>
                   <input
-                    type="text"
+                    type="password"
                     name="password"
+                    placeholder="password"
                     value={password}
                     onChange={this.handleChange}
                   />
+                  <br/>
+                  
                   <input type="submit" />
                 </form>
               </>

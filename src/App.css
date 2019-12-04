@@ -20,3 +20,35 @@
 .App-link {
   color: #09d3ac;
 }
+
+/* Style the navbar */
+#nav {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+    top: 0;
+    transition: all 0.2s ease;
+    width: 100%;
+    z-index: 6;
+}
+
+/* Navbar links */
+#nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#nav a:hover {
+  background-color: aquamarine;
+  color: #333;
+}
+
+#nav p {
+  color: #f2f2f2;
+  font-weight: bold;
+}
