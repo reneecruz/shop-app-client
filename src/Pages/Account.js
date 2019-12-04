@@ -3,27 +3,39 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Account = (props) => {
-    const [item, setItem] = useState("")
+    // const [item, setItem] = useState("")
         
     const user = useSelector(state => state.currentUser)
 
 
     const renderSubmittedOrders = () => {
-       
-    return user.submitted_orders.map(order_item => {
-    return (
-        <div className="cart-item" >
-        <Link to={`/items/${order_item.item.id}`} >
-        <img src={order_item.item.img_url} />
-        </Link>
-        <p>{order_item.item.name}</p>
-        <p>${order_item.item.price}</p>  
-        </div>
-        )   
-    })
+       let arr = []
+       if(user.submitted_orders) {
+        
+        //    debugger
+           user.submitted_orders.forEach(order => {
+              
+               arr = order.order_items.map(item => {
+                // debugger
+                return (
+                    <div className="cart-item" >
+                    <h3>Order Date: {item.updated_at}</h3>
+                    
+                    <Link to={`/items/${item.id}`} >
+                    <img src={item.img_url} />
+                    </Link>
+                    <p>{item.name}</p>
+                    <p>${item.price}</p>  
+                    </div>
+                    ) 
+            })
+          
+        })
+       }
+    return arr
     }
 
-    console.log("account page", user.submitted_orders)
+    console.log("account page", user)
 
     return (
         <div>
@@ -40,8 +52,9 @@ const Account = (props) => {
            <Link to="/"className="show-button">Edit Profile </Link>
            <Link to="/"className="show-button">Delete Profile </Link>
 
-        
-            {renderSubmittedOrders}
+{user.submitted_orders ? <h2>{user.first_name}'s Past Orders: </h2> : null }
+            {renderSubmittedOrders()}
+            
             
         </div>
     )

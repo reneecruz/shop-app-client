@@ -8,7 +8,7 @@ const Cart = (props) => {
     const [item, setItem] = useState("")
     const user = useSelector(state => state.currentUser)
     const dispatch = useDispatch()
-    console.log(user.active_order.order_items)
+    console.log(user)
     
     const renderCart = () => {
         // console.log(user.active_order)
@@ -33,6 +33,7 @@ const Cart = (props) => {
     }
 
     const checkOut = () => {
+        // debugger
         console.log(props.submitOrder)
         dispatch(userActions.submitOrder(user.active_order))
     }
