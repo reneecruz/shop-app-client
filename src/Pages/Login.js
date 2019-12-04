@@ -15,6 +15,10 @@ class Login extends Component {
           handleSubmit = e => {
             e.preventDefault();
             this.props.loginUserToAPI(this.state);
+            this.setState({
+              username: '',
+              password: ''
+            })
           };
         
           render() {

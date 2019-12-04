@@ -18,6 +18,14 @@ class Signup extends Component {
     handleSubmit = e => {
     e.preventDefault();
     this.props.createNewUserToAPI(this.state);
+    this.setState({
+      username: '',
+      password: '',
+      email: '',
+      img_url: '',
+      first_name: '',
+      last_name: ''
+    })
     };
 
         render() {

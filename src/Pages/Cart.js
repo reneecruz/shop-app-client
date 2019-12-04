@@ -44,15 +44,27 @@ const Cart = (props) => {
     // }
 
         return (
-            <div>
-                <h1>{user.first_name}'s Shopping Cart</h1>
-                <h2>You've got {user.active_order ? user.active_order.order_items.length : null} items in your cart.</h2>
+            
+            <>
+            <h1>{user.first_name}'s Shopping Cart 🛒</h1>
+                {user.active_order.order_items.length === 0 
+                ? 
+                
+                <h2>Your cart is currently empty, {user.first_name} 💀</h2>
+                
+                : 
+                <div>
+                
+                <h2>You've got {user.active_order.order_items.length} items in your cart, {user.first_name}! 😉
+                </h2>
                 <ul>
                     {renderCart()}
                 </ul>
                 <button className="show-button" onClick={checkOut}>Checkout</button>
+                </div>
+                }
                 <Link to="/" className="show-button">Continue Shopping</Link>
-            </div>
+            </>
         )
 }
 

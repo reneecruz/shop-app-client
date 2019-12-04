@@ -40,9 +40,9 @@ class ShowItem extends Component {
     <h3>{this.item().description}</h3>
     
     <Link to="/cart" >
-       { this.props.currentUser.id ? <button className="show-button" onClick={this.handleOnClick}>Add to Cart</button> : null}
+       { this.props.currentUser.id ? <button className="show-button" onClick={this.handleOnClick}>Add to Cart  🛒</button> : null}
     </Link>
-    <Link to="/" className="show-button">Continue Shopping</Link>
+    <Link to="/" className="show-button">Continue Shopping </Link>
     </div>)
     }
     return null
