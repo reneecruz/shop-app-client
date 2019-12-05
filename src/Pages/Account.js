@@ -39,7 +39,7 @@ const Account = (props) => {
     console.log("account page", user)
 
     return (
-        <div>
+        <div className="content">
             {/* Item: {item}
             <input type="text" value={item} onChange={(e) => setItem(e.target.value)}/> */}
            <h1>Welcome, {user.first_name}!</h1> 

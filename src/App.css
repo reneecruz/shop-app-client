@@ -9,18 +9,22 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-image: url(http://static1.squarespace.com/static/55ecfe19e4b01667f1806baa/576ee47e414fb5ee3416f081/5ac782b0aa4a9945f3969be8/1523116221923/BlogHeader_Template_Decaf.jpg?format=1500w);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-link {
-  color: #09d3ac;
+  color:aqua;
 }
 
 /* Style the navbar */
@@ -46,7 +50,7 @@
 }
 
 #nav a:hover {
-  background-color: aquamarine;
+  background-color: aqua;
   color: #333;
 }
 
@@ -56,9 +60,53 @@
 }
 
 .footer {
+  color: #333;
+  font-weight: bolder;
   flex-shrink: 0;
   text-align: center;
-  background-color: hotpink;
+  /* background-color: hotpink; */
   padding: 20px;
 }
 
+/* <!-- Trigger/Open The Modal --> */
+/* <button id="modal-button">Open Modal</button> */
+
+/* The Modal (background) */
+.modal {
+  /* display: none; Hidden by default */
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  display: none;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
