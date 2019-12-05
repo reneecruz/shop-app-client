@@ -92,3 +92,11 @@ code {
   text-align: right justify;
 }
 
+ul {
+  list-style-type: none;
+}
+
+/* li {
+  text-decoration: none;
+} */
+

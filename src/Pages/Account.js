@@ -19,7 +19,7 @@ const Account = (props) => {
                 // debugger
                 return (
                     <div className="cart-item" key={item.id}>
-                    <h3>Order Date: {item.updated_at}</h3>
+                    <h3>Order Date: {new Date(item.updated_at.split(" ")[0]).toDateString()}</h3>
                     
                     <Link to={`/items/${item.id}`} >
                     <img src={item.img_url} />
