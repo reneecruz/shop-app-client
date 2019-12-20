@@ -19,37 +19,42 @@ class Login extends Component {
               username: '',
               password: ''
             })
+            this.props.history.push('/account')
           };
         
           render() {
             const { username, password } = this.state;
             return (
               <>
+              <div className="content">
+                
+                <form onSubmit={this.handleSubmit} style={{'display': 'flex', 'flex-direction': 'column', 'align-items': 'center'}}>
                 <h1>Login</h1>
-                <form onSubmit={this.handleSubmit}>
-
-                  <label>username</label>
-                  <input
-                    type="text"
-                    name="username"
-                    placeholder="username"
-                    value={username}
-                    onChange={this.handleChange}
-                  />
-                  <br/>
-
-                  <label>password</label>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="password"
-                    value={password}
-                    onChange={this.handleChange}
-                  />
-                  <br/>
-                  
-                  <input type="submit" />
+                  <div style={{'display': 'flex', 'flex-direction': 'column', 'text-align': 'center'}}>
+                    
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="username"
+                      value={username}
+                      onChange={this.handleChange}
+                      style={{'width': '200px'}}
+                    />
+                  </div>
+                  <div style={{'display': 'flex', 'flex-direction': 'column', 'text-align': 'center'}}>
+                    
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="password"
+                      value={password}
+                      onChange={this.handleChange}
+                      style={{'width': '200px', 'margin-bottom': '12px'}}
+                    />
+                  </div>
+                  <div style={{'display': 'flex', 'justify-content': 'start', 'width': '200px'}}><button className="show-button" type="submit" style={{'margin': '0'}}>Login</button></div>
                 </form>
+              </div> 
               </>
             );
           }

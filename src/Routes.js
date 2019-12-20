@@ -15,6 +15,7 @@ export const Routes = () => {
         />
         <Route path="/account" component={Pages.Account} />
         <Route path="/cart" component={Pages.Cart} />
+        <Route path="/checkout" component={Pages.Checkout} />
 
     </Switch>
 

@@ -8,13 +8,13 @@ const Cart = (props) => {
     const [item, setItem] = useState("")
     const user = useSelector(state => state.currentUser)
     const dispatch = useDispatch()
-    console.log(user.active_order.order_items)
+    console.log(user)
     
     const renderCart = () => {
         // console.log(user.active_order)
     return user.active_order.order_items.map(order_item => {
     return (
-        <div className="cart-item" >
+        <div className="cart-item" key={order_item.item.id}>
         <Link to={`/items/${order_item.item.id}`} >
         <img src={order_item.item.img_url} />
         </Link>
@@ -33,8 +33,10 @@ const Cart = (props) => {
     }
 
     const checkOut = () => {
+        // debugger
         console.log(props.submitOrder)
         dispatch(userActions.submitOrder(user.active_order))
+        props.history.push('/checkout')
     }
 
     // const renderTotalPrice = () => {
@@ -46,16 +48,17 @@ const Cart = (props) => {
         return (
             
             <>
-            <h1>{user.first_name}'s Shopping Cart 🛒</h1>
+            <div className="content">
+            <h1>{user.first_name}'s Shopping Cart</h1>
                 {user.active_order.order_items.length === 0 
                 ? 
                 
-                <h2>Your cart is currently empty, {user.first_name} 💀</h2>
+                <h2>Your cart is currently empty, {user.first_name} </h2>
                 
                 : 
                 <div>
                 
-                <h2>You've got {user.active_order.order_items.length} items in your cart, {user.first_name}! 😉
+                <h2>You've got {user.active_order.order_items.length} items in your cart, {user.first_name}! 
                 </h2>
                 <ul>
                     {renderCart()}
@@ -64,6 +67,7 @@ const Cart = (props) => {
                 </div>
                 }
                 <Link to="/" className="show-button">Continue Shopping</Link>
+                </div>
             </>
         )
 }

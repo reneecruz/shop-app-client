@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Card({ item }) {
-  console.log(item, "card")
+  // console.log(item, "card")
   return (
     
     

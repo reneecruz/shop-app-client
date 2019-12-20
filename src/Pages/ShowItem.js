@@ -9,16 +9,33 @@ import { connect } from 'react-redux';
 
 class ShowItem extends Component {
 
+    // renderModal = () => {
+    //     return (
+    //     <>
+    //     {/* <!-- The Modal --> */}
+    //     <div id="myModal" class="modal">
+
+    //     {/* <!-- Modal content --> */}
+    //     <div class="modal-content">
+    //         <span class="close">&times;</span>
+    //         <p>Some text in the Modal..</p>
+    //     </div>
+
+    //     </div>
+    //     </>
+    //     )
+        
+    // }
+
     handleOnClick = () => {
         if (this.props.currentUser.active_order){
         const active_order_id = this.props.currentUser.active_order.id
         const item_id = this.props.match.params.id
 
         return this.props.createOrderItem(item_id, active_order_id)} 
+        
         else {return null }
-       
-
-        // console.log("been clicked!", this.props)
+               // console.log("been clicked!", this.props)
         
     }
 
@@ -40,7 +57,8 @@ class ShowItem extends Component {
     <h3>{this.item().description}</h3>
     
     <Link to="/cart" >
-       { this.props.currentUser.id ? <button className="show-button" onClick={this.handleOnClick}>Add to Cart  🛒</button> : null}
+       { this.props.currentUser.id ? 
+       <button className="show-button" onClick={this.handleOnClick}>Add to Cart </button> : null}
     </Link>
     <Link to="/" className="show-button">Continue Shopping </Link>
     </div>)
