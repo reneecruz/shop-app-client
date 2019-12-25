@@ -29,7 +29,7 @@ class Login extends Component {
               <div className="content">
                 
                 <form onSubmit={this.handleSubmit} style={{'display': 'flex', 'flex-direction': 'column', 'align-items': 'center'}}>
-                <h1>Login</h1>
+                <h1>Login.</h1>
                   <div style={{'display': 'flex', 'flex-direction': 'column', 'text-align': 'center'}}>
                     
                     <input

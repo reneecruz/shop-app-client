@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 
 const SearchBar = (props) => {
     const [searchInput, setSearchInput] = useState("");
+    const [item, setItem] = useState("");
         
     const user = useSelector(state => state.currentUser)
     const items = useSelector(state => state.items)
-    const [item, setItem] = useState("")
+   
 
     const handleChange = val => {
         setSearchInput(val);
@@ -24,9 +25,14 @@ const SearchBar = (props) => {
 
 
     return (   
+       
         <div>
-            <input type="text" value={searchInput} onChange={(e) => handleChange(e.target.value)}/>
+            {/* <input type="text" value={searchInput} onChange={(e) => handleChange(e.target.value)}/> */}
         </div>
+
+    //     {Item: {item}
+    //         <input type="text" value={item} onChange={(e) => setItem(e.target.value)}/>
+    // }
     )
 }
 

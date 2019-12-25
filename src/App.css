@@ -18,13 +18,22 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background-image: url(http://static1.squarespace.com/static/55ecfe19e4b01667f1806baa/576ee47e414fb5ee3416f081/5ac782b0aa4a9945f3969be8/1523116221923/BlogHeader_Template_Decaf.jpg?format=1500w);
+  background-image: url("https://images.unsplash.com/photo-1495490140452-5a226aef25d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.app-name{
+  letter-spacing: 10px;
+  font-size: 85px;
+  /* background-color: rgba(247, 244, 244, 0.3); */
+  background-color: rgba(7, 7, 7, 0.4);
+  border-radius: 15px;
+  padding: 15px;
+}
+
 .App-link {
-  color:aqua;
+  color: #73f;
 }
 
 /* Style the navbar */
@@ -50,8 +59,8 @@
 }
 
 #nav a:hover {
-  background-color: aqua;
-  color: #333;
+  color: #73f;
+  /* color: #333; */
 }
 
 #nav p {

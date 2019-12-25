@@ -17,7 +17,7 @@ class Home extends Component {
         return (
             <>
             <header className="App-header">
-                <h1>Coffee Shop.</h1>
+                <h1 className="app-name">Small Shop.</h1>
             {/* <img src="http://static1.squarespace.com/static/55ecfe19e4b01667f1806baa/576ee47e414fb5ee3416f081/5ac782b0aa4a9945f3969be8/1523116221923/BlogHeader_Template_Decaf.jpg?format=1500w" alt="coffee shop"/> */}
             </header>
             <div className="card-container">

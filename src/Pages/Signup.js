@@ -35,7 +35,7 @@ class Signup extends Component {
               <>
                 <div className="content">
                   <form onSubmit={this.handleSubmit}>
-                    <h1>Signup for an Account</h1>
+                    <h1>Signup for an Account.</h1>
                     <div style={{'display': 'flex', 'flex-direction': 'row'}}>
                       <div style={{'display': 'flex', 'flex-direction': 'column', 'margin-right': '24px'}}>
                         <label>First Name</label>
