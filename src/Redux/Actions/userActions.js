@@ -24,12 +24,10 @@ const submitOrderAction = (active_order) => ({
 })
 
 
-
-
 // Fetch
 
 const loginUserToAPI = userCredentials => dispatch => {
-    fetch('http://localhost:3000/login', {
+    fetch('https://safe-mesa-89786.herokuapp.com/login', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -45,7 +43,7 @@ const loginUserToAPI = userCredentials => dispatch => {
 };
 
 const persistUserFromAPI = () => dispatch => {
-    fetch('http://localhost:3000/persist', {
+    fetch('https://safe-mesa-89786.herokuapp.com/persist', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -67,7 +65,7 @@ const createNewUserToAPI = userInfo => dispatch => {
       },
       body: JSON.stringify(userInfo)
     };
-    fetch('http://localhost:3000/users', config)
+    fetch('https://safe-mesa-89786.herokuapp.com/users', config)
       .then(r => r.json())
       .then(data => {
         dispatch(setUserAction(data.user));
@@ -91,7 +89,7 @@ const createOrderItem = (item_id, active_order_id) => dispatch => {
             item_id: item_id, 
             order_id: active_order_id})
     };
-    fetch('http://localhost:3000/order_items', config)
+    fetch('https://safe-mesa-89786.herokuapp.com/order_items', config)
     .then(res => res.json())
     .then(data => {
       // debugger 
@@ -111,7 +109,7 @@ const removeOrderItem = (item) => dispatch => {
       order_item: item
     })
   };
-  fetch(`http://localhost:3000/order_items/${item.id}`, config)
+  fetch(`https://safe-mesa-89786.herokuapp.com/order_items/${item.id}`, config)
   .then(res => res.json())
   .then(data => {
     console.log(data)
@@ -128,7 +126,7 @@ const submitOrder = (active_order) => dispatch => {
         'Authorization': localStorage.token
     }
   };
-    fetch('http://localhost:3000/checkout', config)
+    fetch('https://safe-mesa-89786.herokuapp.com/checkout', config)
     .then(res => res.json())
     .then(data => {
       console.log(data)
