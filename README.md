@@ -2,7 +2,22 @@
 
 ![Small Shop Web App](smallshop_demo.png)
 
+## DEMO VIDEO
+
 https://youtu.be/koocqpsIepE
+
+## Signup Page/Route
+
+![Small Shop Web App Signup](smallshop_signup.png)
+
+### Authentication & Authorization using JWT & BCrypt
+
+## Login Page/Route
+
+
+
+### User Login & Persist using Rails API Backend with Auth implemented as mentioned above
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
