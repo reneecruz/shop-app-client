@@ -1,3 +1,9 @@
+# **SMALL SHOP** 
+
+![Small Shop Web App](smallshop_demo.png)
+
+https://youtu.be/koocqpsIepE
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
