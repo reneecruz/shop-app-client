@@ -8,7 +8,7 @@
 https://youtu.be/koocqpsIepE
 
 ## Item Index data from External API (H&M)
-![Small Shop H&M API](smallshop_H&M_API.png)
+![Small Shop H&M API](smallshop_h&m_API.png)
 
 ## Items Index 
 
