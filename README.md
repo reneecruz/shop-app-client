@@ -1,5 +1,6 @@
 # **SMALL SHOP** 
 
+## Small Shop is a Minimalist Themed E-Commerce Online Business Solution for Entrepreneurs 
 ![Small Shop Web App](smallshop_demo.png)
 
 ## DEMO VIDEO
