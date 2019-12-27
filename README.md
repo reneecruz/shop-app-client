@@ -14,6 +14,7 @@ https://youtu.be/koocqpsIepE
 
 ## Login Page/Route
 
+![Small Shop Web App Login](smallshop_login.png)
 
 
 ### User Login & Persist using Rails API Backend with Auth implemented as mentioned above
