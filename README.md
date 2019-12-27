@@ -6,6 +6,16 @@
 
 https://youtu.be/koocqpsIepE
 
+## Item Index data from External API (H&M)
+![Small Shop H&M API](smallshop_H&M_API.png)
+
+## Items Index 
+
+![Small Shop Items Index](smallshop_items_index.png)
+
+## Item Showpage 
+![Small Shop Item Showpage](smallshop_items_showpage.png)
+
 ## Signup Page/Route
 
 ![Small Shop Web App Signup](smallshop_signup.png)
