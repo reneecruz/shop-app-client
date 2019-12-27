@@ -30,6 +30,9 @@ https://youtu.be/koocqpsIepE
 
 ### User Login & Persist using Rails API Backend with Auth implemented as mentioned above
 
+## Rails API Backend 
+https://github.com/reneecruz/shop-app-api
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
