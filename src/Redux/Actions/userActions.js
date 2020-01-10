@@ -29,7 +29,7 @@ const submitOrderAction = (active_order) => ({
 // Fetch
 
 const loginUserToAPI = userCredentials => dispatch => {
-    fetch(`${BASE_URL}/login`, {
+    fetch(`${HEROKU_URL}/login`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -45,7 +45,7 @@ const loginUserToAPI = userCredentials => dispatch => {
 };
 
 const persistUserFromAPI = () => dispatch => {
-    fetch(`${BASE_URL}/persist`, {
+    fetch(`${HEROKU_URL}/persist`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ const createNewUserToAPI = userInfo => dispatch => {
       },
       body: JSON.stringify(userInfo)
     };
-    fetch(`${BASE_URL}/users`, config)
+    fetch(`${HEROKU_URL}/users`, config)
       .then(r => r.json())
       .then(data => {
         dispatch(setUserAction(data.user));
@@ -91,7 +91,7 @@ const createOrderItem = (item_id, active_order_id) => dispatch => {
             item_id: item_id, 
             order_id: active_order_id})
     };
-    fetch(`${BASE_URL}/order_items`, config)
+    fetch(`${HEROKU_URL}/order_items`, config)
     .then(res => res.json())
     .then(data => {
       // debugger 
@@ -111,7 +111,7 @@ const removeOrderItem = (item) => dispatch => {
       order_item: item
     })
   };
-  fetch(`${BASE_URL}/persist/order_items/${item.id}`, config)
+  fetch(`${HEROKU_URL}/persist/order_items/${item.id}`, config)
   .then(res => res.json())
   .then(data => {
     console.log(data)
@@ -128,7 +128,7 @@ const submitOrder = (active_order) => dispatch => {
         'Authorization': localStorage.token
     }
   };
-    fetch(`${BASE_URL}/persist/checkout`, config)
+    fetch(`${HEROKU_URL}/persist/checkout`, config)
     .then(res => res.json())
     .then(data => {
       console.log(data)
