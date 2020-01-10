@@ -15,7 +15,7 @@
 
 export const fetchItemsFromAPI = () => {
     return (dispatch) => {
-        return fetch('http://localhost:3000/items')
+        return fetch('https://safe-mesa-89786.herokuapp.com/items')
             .then(res => res.json())
             .then(itemsArr => {
                 console.log('ITEM ACTIONS' , itemsArr)

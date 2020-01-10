@@ -1,4 +1,6 @@
 // Redux User Actions
+const BASE_URL = "http://localhost:3000"
+const HEROKU_URL = "https://safe-mesa-89786.herokuapp.com" 
 
 const setUserAction = userObj => ({
     type: 'SET_USER',
@@ -27,7 +29,7 @@ const submitOrderAction = (active_order) => ({
 // Fetch
 
 const loginUserToAPI = userCredentials => dispatch => {
-    fetch('https://safe-mesa-89786.herokuapp.com/login', {
+    fetch(`${BASE_URL}/login`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -43,7 +45,7 @@ const loginUserToAPI = userCredentials => dispatch => {
 };
 
 const persistUserFromAPI = () => dispatch => {
-    fetch('https://safe-mesa-89786.herokuapp.com/persist', {
+    fetch(`${BASE_URL}/persist`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -65,7 +67,7 @@ const createNewUserToAPI = userInfo => dispatch => {
       },
       body: JSON.stringify(userInfo)
     };
-    fetch('https://safe-mesa-89786.herokuapp.com/users', config)
+    fetch(`${BASE_URL}/users`, config)
       .then(r => r.json())
       .then(data => {
         dispatch(setUserAction(data.user));
@@ -89,7 +91,7 @@ const createOrderItem = (item_id, active_order_id) => dispatch => {
             item_id: item_id, 
             order_id: active_order_id})
     };
-    fetch('https://safe-mesa-89786.herokuapp.com/order_items', config)
+    fetch(`${BASE_URL}/order_items`, config)
     .then(res => res.json())
     .then(data => {
       // debugger 
@@ -109,7 +111,7 @@ const removeOrderItem = (item) => dispatch => {
       order_item: item
     })
   };
-  fetch(`https://safe-mesa-89786.herokuapp.com/order_items/${item.id}`, config)
+  fetch(`${BASE_URL}/persist/order_items/${item.id}`, config)
   .then(res => res.json())
   .then(data => {
     console.log(data)
@@ -126,7 +128,7 @@ const submitOrder = (active_order) => dispatch => {
         'Authorization': localStorage.token
     }
   };
-    fetch('https://safe-mesa-89786.herokuapp.com/checkout', config)
+    fetch(`${BASE_URL}/persist/checkout`, config)
     .then(res => res.json())
     .then(data => {
       console.log(data)
