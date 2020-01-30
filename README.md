@@ -4,10 +4,11 @@
 ![Small Shop Web App](smallshop_demo.png)
 
 ## DEMO VIDEO
-
-https://youtu.be/koocqpsIepE
+https://youtu.be/AvZsuDvOJX4
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fe91612f-fc39-4e23-8f6c-8e4567cb96a4/deploy-status)](https://app.netlify.com/sites/smallshop/deploys)
+
+Deployed live site on Netlify: https://smallshop.netlify.com/
 
 ## Item Index data from External API (H&M)
 ![Small Shop H&M API](smallshop_h&m_API.png)
