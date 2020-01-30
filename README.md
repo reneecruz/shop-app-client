@@ -7,6 +7,8 @@
 
 https://youtu.be/koocqpsIepE
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fe91612f-fc39-4e23-8f6c-8e4567cb96a4/deploy-status)](https://app.netlify.com/sites/smallshop/deploys)
+
 ## Item Index data from External API (H&M)
 ![Small Shop H&M API](smallshop_h&m_API.png)
 
